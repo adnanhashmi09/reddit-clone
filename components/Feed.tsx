@@ -1,6 +1,7 @@
 import { GET_ALL_POSTS, GET_ALL_POSTS_BY_TOPIC } from "@/graphql/queries";
 import { useQuery } from "@apollo/client";
 import Post from "./Post";
+import Skeleton from "./Skeleton";
 
 type Props = {
   topic?: string
@@ -16,12 +17,12 @@ function Feed({ topic }: Props) {
 
   // Check for loading state
   if (loading) {
-    return <p>Loading...</p>;
+    return <Skeleton />
   }
 
   // Check for error state
   if (error) {
-    return <p>Error: {error.message}</p>;
+    return <p>Error</p>;
   }
 
   if (data) {
