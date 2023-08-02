@@ -45,7 +45,7 @@ async function generateFakePosts(numPosts) {
       body: faker.lorem.paragraphs(),
       image: imageUrl,
       username: faker.internet.userName(),
-      subreddit_id: getRandomInt(1, 4),
+      subreddit_id: getRandomInt(1, 6),
     };
 
     posts.push(post);
